@@ -1,0 +1,32 @@
+{
+  "name": "frontend-test-brandquad",
+  "private": true,
+  "version": "0.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "errorhandler": "^1.5.1",
+    "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
+    "express-session": "^1.16.2",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.9.1",
+    "primevue": "^3.50.0",
+    "vue": "^3.4.21",
+    "vue-router": "4.3.0",
+    "vite-svg-loader": "^5.1.0",
+    "sass": "1.71.1",
+    "axios": "1.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.28",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "vite": "^5.2.0"
+  }
+}
