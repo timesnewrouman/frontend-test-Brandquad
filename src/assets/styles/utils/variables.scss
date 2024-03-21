@@ -1,0 +1,67 @@
+//Цвета
+$primary-color: #13387D;
+$secondary-color: #830615;
+$success-color: #29A128;
+$danger-color: #ED393E;
+$warning-color: #D4990A;
+$light-color: #618AA7;
+$purple-color: #8854d0;
+$black-color: #000000;
+$white-color: #ffffff;
+$grey-color: #818285;
+$grey-color-dark: #49606B;
+
+$color-blue-dark: #233779;
+$color-blue: #0292e1;
+$color-orange: #eb8e1c;
+$color-orange-dark: #eb722e;
+$color-yellow: #fac503;
+
+$color-grey: #546e7a;
+$color-grey-light: #89A0B0;
+
+$firstColor: #233779;
+$secondColor: #eb8e1c;
+$thirdColor: #008BCB;
+$greyColorLight: #B5BAC7;
+$greyColorBorder: #D1D2D4;
+$backgroundColor: #FAFCFF;
+$success-color-background: #EBF9EB;
+$danger-color-background: #FDEBEB;
+$light-color-background: #CFE0EC;
+
+//Шрифты и текст
+$fontSizeMobileXS: 8px;
+$fontSizeMobileS: 9px;
+$fontSizeMobileM: 10px;
+$fontSizeMobileL: 12px;
+$fontSizeMobileXL: 13px;
+
+$fontSizeS: 14px;
+$fontSizeMain: 16px;
+$fontSizeL: 20px;
+$fontSizeXL: 26px;
+$fontSizeXXL: 36px;
+
+//Разметка
+$containerWidth: 1140px;
+$desktopWidth: 1280px;
+$smDesktopWidth: 980px;
+$tableWidth: 768px;
+$phoneWidth: 480px;
+$smPhoneWidth: 320px;
+
+$mobile-version: 768px;
+$mobile-version-container: 500px;
+
+//Другое
+$speed-0: 0.6s;
+$speed-1: 0.3s;
+$boxShadow:  0px 0px 5px 5px rgba(167, 169, 172, 0.1);
+$boxShadowLight: 0px 0px 5px 5px rgba(167, 169, 172, 0.1);
+$boxShadowHover: 0px 0px 5px 5px rgba(0, 0, 0, 0.19);
+$boxShadowHoverLight: 0px 0px 5px 5px rgba(0, 0, 0, 0.15);
+$boxShadowMobile: 0px 0px 3px 3px rgba(0, 0, 0, 0.15);
+$boxShadowMobileClicked: 2px 2px 4px rgba(0, 0, 0, 0.5);
+$borderRadius: 20px;
+$borderRadiusMobile: 3px;
