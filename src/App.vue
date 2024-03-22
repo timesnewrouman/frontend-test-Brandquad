@@ -12,7 +12,3 @@ const appStoreData = storeData();
 
 provide('store', appStoreData)
 </script>
-
-<style scoped>
-
-</style>

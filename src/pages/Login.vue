@@ -1,5 +1,5 @@
 <template>
-	<div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
+	<div class="surface-card p-4 shadow-2 border-round w-full lg:w-6 customClass">
 		<div class="text-center mb-5">
 			<div class="text-900 text-3xl font-medium mb-3">Авторизация</div>
 			<span class="text-600 font-medium line-height-3">Нет аккаунта?</span>
@@ -27,6 +27,11 @@ const password = ref(null);
 
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+.customClass {
+	display: flex;
+	flex-direction: column;
+	margin: 250px auto 0 auto;
+	max-width: 700px;
+}
 </style>

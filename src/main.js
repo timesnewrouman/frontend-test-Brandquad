@@ -4,6 +4,7 @@ import App from '@/App.vue';
 import PrimeVue from 'primevue/config';
 import Button from "primevue/button";
 import InputText from "primevue/inputtext";
+import ToastService from 'primevue/toastservice';
 import {createRouter, createWebHistory} from 'vue-router';
 import {routes} from "@/router/router";
 import '/src/assets/styles/index.scss';
@@ -24,4 +25,5 @@ createApp(App, {})
   .use(PrimeVue)
   .component('Button', Button)
   .component('InputText', InputText)
+  .component('ToastService', ToastService)
   .mount('#app')
