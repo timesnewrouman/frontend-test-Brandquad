@@ -12,14 +12,15 @@
 
 			<label for="password1" class="block text-900 font-medium mb-2">Password</label>
 			<InputText id="password1" type="password" placeholder="Password" class="w-full mb-3" v-model="password"/>
-			<Button label="Авторизоваться" class="w-full" @click="login(username, password)"></Button>
+			<Button label="Авторизоваться" class="w-full" @click="loginStore.login(username, password)"></Button>
 		</div>
 	</div>
 </template>
 
 <script setup>
-import {ref} from "vue";
-import {login} from "@/composables/auth";
+import {inject, ref} from "vue";
+
+const loginStore = inject('store');
 
 const username = ref(null);
 const password = ref(null);

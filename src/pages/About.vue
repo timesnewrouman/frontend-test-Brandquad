@@ -3,11 +3,12 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
-import {getInfo, authData, userData} from "@/composables/auth";
+import {inject, ref} from "vue";
 
-if (authData.value) {
-	getInfo();
+const aboutStore = inject('store');
+
+if (aboutStore.authData) {
+	aboutStore.getInfo();
 }
 
 // const username = ref(null);
