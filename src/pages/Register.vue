@@ -8,10 +8,10 @@
 		</div>
 
 		<div>
-			<label for="userman1" class="block text-900 font-medium mb-2">Username</label>
+			<label for="userman1" class="block text-900 font-medium mb-2">Логин</label>
 			<InputText id="userman1" type="text" placeholder="Username" class="w-full mb-3" v-model="username"/>
 
-			<label for="password1" class="block text-900 font-medium mb-2">Password</label>
+			<label for="password1" class="block text-900 font-medium mb-2">Пароль</label>
 			<InputText id="password1" type="password" placeholder="Password" class="w-full mb-3" v-model="password"/>
 			<Button label="Зарегистрироваться" class="w-full" @click="handleRegisterClick()"></Button>
 		</div>
@@ -28,23 +28,38 @@ const registerStore = inject('store');
 const username = ref(null);
 const password = ref(null);
 
-async function handleRegisterClick() {
-	try {
-		await errorCheck();
-		await registerStore.register(username, password);
-	} catch (error) {
-		console.error(error);
+function errorCheck() {
+	if (username?.value?.length < 3) {
+		toast.add({severity: 'error', summary: 'Ошибка', detail: "Слишком короткое имя!", life: 3000});
+		return false;
+	} else if (password?.value?.length < 4) {
+		toast.add({severity: 'error', summary: 'Ошибка', detail: "Слишком короткий пароль!", life: 3000});
+		return false;
+	} else if (username.value === null || password.value === null) {
+		toast.add({severity: 'error', summary: 'Ошибка', detail: "Необходимо указать логин и пароль", life: 3000});
+		return false;
+	} else {
+		return true;
 	}
 }
 
-async function errorCheck() {
-	console.log(username.value.length, password.value.length)
-	if (username.value.length < 3) {
-		toast.add({severity: 'error', summary: 'ошибка', detail: "Слишком короткое имя!", life: 3000});
-	} else if (password.value.length < 4) {
-		toast.add({severity: 'error', summary: 'ошибка', detail: "Слишком короткий пароль!", life: 3000});
-	} else {
-		return
+function handleRegisterClick() {
+	try {
+		if (errorCheck()) {
+			registerStore.register(username.value, password.value)
+				.then((response) => {
+					if (!response?.success) {
+						toast.add({
+							severity: 'error',
+							summary: 'Ошибка',
+							detail: `${response.errorMessage}`,
+							life: 3000
+						});
+					}
+				})
+		}
+	} catch (error) {
+		console.error(error);
 	}
 }
 

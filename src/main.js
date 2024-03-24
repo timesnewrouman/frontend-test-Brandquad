@@ -4,6 +4,7 @@ import App from '@/App.vue';
 import PrimeVue from 'primevue/config';
 import Button from "primevue/button";
 import InputText from "primevue/inputtext";
+import Toast from 'primevue/toast';
 import ToastService from 'primevue/toastservice';
 import {createRouter, createWebHistory} from 'vue-router';
 import {routes} from "@/router/router";
@@ -23,7 +24,8 @@ createApp(App, {})
   .use(router)
   .use(pinia)
   .use(PrimeVue)
+  .use(ToastService)
   .component('Button', Button)
   .component('InputText', InputText)
-  .component('ToastService', ToastService)
+  .component('Toast', Toast)
   .mount('#app')

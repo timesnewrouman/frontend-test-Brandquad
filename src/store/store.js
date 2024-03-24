@@ -18,12 +18,12 @@ export const storeData = defineStore('main', () => {
         if (response.status === 200) {
           return router.push({name: 'Login'})
         } else {
-          console.log(response.status)
+          return {success: false, errorStatus: `${response.status}`, errorMessage: `Ошибка: ${error.response.data}`};
         }
       })
-      .catch((reject) => {
-        console.log(`ошибка register`, reject.data)
-      })
+      .catch((error) => {
+        return {success: false, errorStatus: `${error.response.status}`, errorMessage: `Ошибка: ${error.response.data.error}`};
+      });
   }
 
   function login(username, password) {
@@ -39,8 +39,8 @@ export const storeData = defineStore('main', () => {
           console.log(response.status)
         }
       })
-      .catch((reject) => {
-        console.log(`ошибка login`, reject.data)
+      .catch((error) => {
+        return {success: false, errorStatus: `${error.response.status}`};
       })
   }
 
